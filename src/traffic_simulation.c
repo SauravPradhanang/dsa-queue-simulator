@@ -55,8 +55,7 @@ void createVehicle() {
     } else {
         return;
     }
-    // newVehicle.color = {rand() % 256, rand() % 256, rand() % 256, 255};
-
+    
     for (int i = 0; i < MAX_VEHICLES; i++) {
         if (!vehicles[i].active) {
             vehicles[i] = newVehicle;
