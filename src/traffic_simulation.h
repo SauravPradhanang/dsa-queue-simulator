@@ -1,6 +1,9 @@
 #include <stdio.h>
 #ifndef TRAFFIC_SIMULATION_H
 #define TRAFFIC_SIMULATION_H
+#define ROAD_WIDTH 100
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGHT 800
 #include <SDL2/SDL.h>
 #include <stdio.h>
 #include <stdlib.h>
