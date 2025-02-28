@@ -27,7 +27,7 @@ void simulateTraffic() {
         return;
     }
     
-    SDL_Window *window = SDL_CreateWindow("Traffic Simulation", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 800, SDL_WINDOW_SHOWN);
+    SDL_Window *window = SDL_CreateWindow("Traffic Simulation", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
     if (!window) {
         printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
         return;
@@ -39,7 +39,7 @@ void simulateTraffic() {
         SDL_DestroyWindow(window);
         return;
     }
-       
+    //SDL_RenderSetScale(renderer, 0.9, 0.9);
     bool running = true;
     SDL_Event event;
     int frameCounter = 0;

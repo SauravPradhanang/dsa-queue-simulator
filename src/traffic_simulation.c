@@ -8,10 +8,10 @@
 
 Vehicle vehicles[MAX_VEHICLES]; // Queue for vehicles
 TrafficLight trafficLights[4] = {
-    {{250, 230, 50, 100}, false},  // Left
-    {{475, 480, 50, 100}, false},  // Right
-    {{475, 230, 50, 100}, false},  // Top
-    {{250, 480, 50, 100}, false}   // Bottom
+    {{(SCREEN_WIDTH-ROAD_WIDTH)/2 - 50, (SCREEN_HEIGHT-ROAD_WIDTH)/2 - 100, 50, 100}, false},  // Left
+    {{(SCREEN_WIDTH+ROAD_WIDTH)/2, (SCREEN_HEIGHT+ROAD_WIDTH)/2, 50, 100}, false},  // Right
+    {{(SCREEN_WIDTH+ROAD_WIDTH)/2, (SCREEN_HEIGHT-ROAD_WIDTH)/2 - 100, 50, 100}, false},  // Top
+    {{(SCREEN_WIDTH-ROAD_WIDTH)/2 - 50, (SCREEN_HEIGHT+ROAD_WIDTH)/2 , 50, 100}, false}   // Bottom
 };
 
 int currentLight = 0;
@@ -40,16 +40,16 @@ void createVehicle() {
     
     if (direction == LEFT && trafficLights[0].isGreen) {
         newVehicle.rect.x = -newVehicle.rect.w;
-        newVehicle.rect.y = (rand() % 2 == 0) ? 350 : 380;
+        newVehicle.rect.y = (rand() % 2 == 0) ? SCREEN_HEIGHT/2 - ROAD_WIDTH/4 : SCREEN_HEIGHT/2 + ROAD_WIDTH/4;
     } else if (direction == RIGHT && trafficLights[1].isGreen) {
         newVehicle.rect.x = SCREEN_WIDTH;
-        newVehicle.rect.y = (rand() % 2 == 0) ? 400 : 430;
+        newVehicle.rect.y = (rand() % 2 == 0) ? SCREEN_HEIGHT/2 + ROAD_WIDTH/4 : SCREEN_HEIGHT/2 - ROAD_WIDTH/4;
         newVehicle.speed = -5;
     } else if (direction == TOP && trafficLights[2].isGreen) {
-        newVehicle.rect.x = (rand() % 2 == 0) ? 400 : 430;
+        newVehicle.rect.x = (rand() % 2 == 0) ? SCREEN_HEIGHT/2 + ROAD_WIDTH/4 : SCREEN_WIDTH/2 - ROAD_WIDTH/4;
         newVehicle.rect.y = -newVehicle.rect.h;
     } else if (direction == BOTTOM && trafficLights[3].isGreen) {
-        newVehicle.rect.x = (rand() % 2 == 0) ? 350 : 380;
+        newVehicle.rect.x = (rand() % 2 == 0) ? SCREEN_WIDTH/2 - ROAD_WIDTH/4 : SCREEN_WIDTH/2 + ROAD_WIDTH/4;
         newVehicle.rect.y = SCREEN_HEIGHT;
         newVehicle.speed = -5;
     } else {
