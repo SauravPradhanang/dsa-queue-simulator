@@ -23,7 +23,6 @@ typedef struct {
     SDL_Rect rect;
     bool active;
     int speed;
-    // SDL_Color color;
     Direction direction;
 } Vehicle;
 

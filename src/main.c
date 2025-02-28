@@ -57,7 +57,6 @@ void simulateTraffic() {
         SDL_RenderClear(renderer);        
         drawIntersection(renderer);
         
-        //SDL_RenderCopy(renderer, background, NULL, NULL);
         
         if (frameCounter % 30 == 0) {
             createVehicle();
@@ -77,8 +76,6 @@ void simulateTraffic() {
         
         SDL_RenderPresent(renderer);
     }
-    
-    //SDL_DestroyTexture(background);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
